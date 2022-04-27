@@ -1,0 +1,143 @@
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+
+/*----------- apply a natural box layout model to all elements --------------*/
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+
+/*----------- BODY --------------*/
+body {
+    font-size: 16px;
+    font-family: Verdana, sans-serif;
+}
+
+div#pageWrapper {
+    display: grid;
+    grid-template: 
+    "header"
+    "content"
+    "navigation"
+    "footer";
+}
+
+
+/*----------- HEADER --------------*/
+header {
+    grid-area: header;
+    padding: 2%;
+    background-color: #ddd;
+    width: 100%;
+}
+header h1 {margin: 0;}
+header h2 {margin: 0; font-weight: normal;}
+
+/*----------- NAVIGATION --------------*/
+nav {
+    grid-area: navigation;
+    background-color: $navBackground;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 999;
+}
+nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+nav ul li {
+    flex-basis: 33.3%;
+    float: left;
+    width: 100%;
+}
+nav ul li a {
+    display: block;
+    background-color: $navAnchor;
+    color: #eee;
+    border-left: 1px solid #777;
+    padding: .5rem 0;
+    text-decoration: none;
+    font-size: .9rem;
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+}
+nav ul li:first-child a {border-left: none;}
+
+nav ul li a:hover {
+    background-color: #eee;
+    color: #333;
+}
+nav ul li.active a {
+    background-color: #000;
+    color: #fff;
+}
+
+nav ul li a i {
+    display: grid;
+    font-size: 2rem;
+}
+/*----------- MAIN --------------*/
+main {
+    padding: 0 2%;
+    min-height: 10rem;
+}
+
+
+
+
+div#hotels{
+    display: grid;
+    grid-template-columns: 1fr;
+    section {
+        background-color: rgb(158, 158, 158);
+        margin: .5rem;
+    }
+    figure{
+        margin: 0;
+        width: 100%;
+        img{
+            width: 100%;
+            height: auto;
+        }
+        position: relative;
+    
+        figcaption{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.5);
+            color: black;
+            padding: .5rem 2vw;
+            height: auto;
+        }
+    }
+
+    div {
+        padding: .5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        span ion-icon {
+            float: left;
+            font-size: 2rem;
+            padding-top: 1rem;
+        }
+
+        span p{
+            padding-left: 2.5rem;
+
+        }
+    }
+}
+
+
+/*----------- FOOTER --------------*/
+footer {
+    grid-area: footer;
+    background-color: #ddd;
+    padding: .5rem 2%;
+    text-align: center;
+}
+

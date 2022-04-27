@@ -1,0 +1,45 @@
+
+div#pageWrapper {
+    display: grid;
+    grid-template: 
+    "header"
+    "content"
+    "navigation"
+    "footer";
+}
+
+/*----------- BODY --------------*/
+
+
+
+/*----------- HEADER --------------*/
+
+header {
+    width: 100%;
+}
+
+
+
+/*----------- NAVIGATION --------------*/
+    nav {flex-basis: auto;}
+    nav ul {margin: 0 auto;}
+    nav ul li {width: auto;}
+    nav ul li:first-child a {border-left: 1px solid #777;}
+    nav ul li:last-child a {border-right: 1px solid #777;}
+    nav ul li a{padding: .5rem 1rem;}
+
+
+/*----------- MAIN --------------*/
+main{
+    div#hotels{
+        grid-template-columns: 1fr 1fr;
+    }
+    img {
+        height: auto;
+    }
+}
+
+
+
+/*----------- FOOTER --------------*/
+    
